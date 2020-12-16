@@ -7,6 +7,14 @@ const API_URL = `https://${SUBDOMAIN}.webex.com/webappng/api/v1/recordings/${REC
 var PASSWORD;
 var API_RESPONSE = -1;
 
+document.addEventListener("keyup", (event) => {
+    let key = event.key;
+    if (key === " ") {
+      event.preventDefault();
+      document.getElementById("playOrPause").click();
+    }
+  });
+
 var observer = new MutationObserver(function(mutations) {
     if (document.getElementsByClassName('buttonRightContainer').length) { // wait for this
 
